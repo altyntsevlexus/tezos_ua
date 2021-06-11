@@ -1,4 +1,5 @@
 import React from 'react'
+import Td from './shared/Td'
 
 const Table = ({blocks}) => {
     return(
@@ -25,17 +26,7 @@ const Table = ({blocks}) => {
 
                 const date = `${day}.${month}.${year} at ${hours}:${minutes}`
                 
-                return(
-                <tr key={block.level}>
-                    <td>{block.level}</td>
-                    <td>{block.chainId}</td>
-                    <td>{date}</td>
-                    <td>{block.number_of_operations}</td>
-                    <td>{block.volume} m</td>
-                    <td>{block.fees} m</td>
-                    <td>{block.endorsements}</td>
-                </tr>
-                )   
+                return <Td level={block.level} chainId={block.chainId} date={date} number_of_operations={block.number_of_operations} volume={block.volume} fees={block.fees} endorsements={block.endorsements} />   
             })}
             </tbody>
         </table>
