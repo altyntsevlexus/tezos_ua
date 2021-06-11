@@ -21,10 +21,12 @@ const Nav = () => {
             <div className="nav__background">
                 <div className="wrapper">
                     <div className="nav__flexbox">
-                        <div className="logo-box">
-                        <img alt="Tezos" src="/images/vector.png" className="logo-box__logo"/>
-                        <p>Tezos4all</p>
-                        </div>
+                        <Link to='./home'>
+                            <div className="logo-box">
+                            <img alt="Tezos" src="/images/vector.png" className="logo-box__logo"/>
+                            <p>Tezos4all</p>
+                            </div>
+                        </Link>
                         {isMobile 
                         ? 
                         <>
