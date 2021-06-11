@@ -12,9 +12,9 @@ const LoginForm = () => {
     })
 
     const [errors, setErrors] = useState({
-        email: false,
-        password: false,
-        password2: false
+        email: true,
+        password: true,
+        password2: true
     })
 
     const handleChange = (e) => {
@@ -28,12 +28,12 @@ const LoginForm = () => {
         e.preventDefault();
 
         setErrors({
-            email: !validateEmail(credentials.email),
-            password: !validatePassword(credentials.password),
-            password2: credentials.password !== credentials.password2
+            email: validateEmail(credentials.email),
+            password: validatePassword(credentials.password),
+            password2: credentials.password === credentials.password2
         })
 
-        if(errors.email === errors.password === errors.password2 === true){
+        if(validateEmail(credentials.email) && validatePassword(credentials.password) && credentials.password === credentials.password2){
             alert("Welcome to Tezos!")
         }
 
@@ -54,9 +54,11 @@ const LoginForm = () => {
                     />
 
                     {errors.email ? 
-                        <p className="login-form__notification login-form__notification_red">
-                            Email is Invalid
-                        </p> : ''}
+                       "" : 
+                       <p className="login-form__notification login-form__notification_red">
+                        Email is Invalid
+                        </p> 
+                    }
                 </div>
 
                 <div className="login-form__group">
@@ -70,11 +72,11 @@ const LoginForm = () => {
                     />
 
                     {errors.password ? 
-                        <p className="login-form__notification login-form__notification_red">
+                        <p className="login-form__notification login-form__notification_gray">
                             Password must contain only latin letters, 1 upper-case character, 1 lower-case character, one number and one special character
                         </p> 
                         : 
-                        <p className="login-form__notification login-form__notification_gray">
+                        <p className="login-form__notification login-form__notification_red">
                             Password must contain only latin letters, 1 upper-case character, 1 lower-case character, one number and one special character
                         </p>
                     }
@@ -91,9 +93,11 @@ const LoginForm = () => {
                     />
 
                     {errors.password2 ? 
+                        "" : 
                         <p className="login-form__notification login-form__notification_red">
                         Passwords don't match
-                        </p> : ''}
+                        </p>
+                    }
                 </div>
 
                 <input type="submit" value="Login" className="button_submit_enabled"/>

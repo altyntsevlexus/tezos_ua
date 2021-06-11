@@ -10,7 +10,7 @@ const Input = ({labelName, name, value, handleChange, errorTracker, type, ...inp
             value={value} 
             name={name} 
             required 
-            className={errorTracker ? 'login-form__input_error' : 'login-form__input'}
+            className={errorTracker ? 'login-form__input' : 'login-form__input_error'}
             onChange={handleChange} 
             />
         </>
