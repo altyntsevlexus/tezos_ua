@@ -1,0 +1,57 @@
+.team {
+	&__flexbox {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	@media (min-width: 1281px) {
+		&__flexbox {
+			flex-direction: row;
+		}
+	}
+
+	&__title {
+		text-align: center;
+	}
+
+	@media (min-width: 1281px) {
+		&__title {
+			text-align: left;
+		}
+	}
+
+	&__box {
+		max-width: 605px;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		width: 100%;
+		margin-bottom: 20px;
+
+		img {
+			width: 100vw;
+			object-fit: cover;
+			margin-bottom: 20px;
+			align-self: center;
+		}
+
+		@media (min-width: 870px) {
+			img {
+				width: inherit;
+				align-self: flex-start;
+			}
+		}
+
+		p {
+			font-size: 16px;
+			margin-bottom: 20px;
+		}
+
+		a {
+			text-decoration: none;
+			align-self: flex-end;
+		}
+	}
+}

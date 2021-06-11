@@ -1,0 +1,39 @@
+.nav {
+	&__background {
+		height: 85px;
+		background: #2b7df7;
+		display: flex;
+		align-items: center;
+		position: relative;
+	}
+
+	&__flexbox {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__dropdown {
+		position: absolute;
+		background-color: #ffbf2b;
+		bottom: -80px;
+		right: 20px;
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+.logo-box {
+	display: flex;
+	align-items: center;
+	font-weight: bold;
+	font-size: 18px;
+	color: #ffffff;
+	display: flex;
+	gap: 10px;
+
+	&__logo {
+		height: 36px;
+		width: 26px;
+	}
+}

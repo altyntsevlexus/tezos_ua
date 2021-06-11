@@ -1,0 +1,44 @@
+.footer {
+	&__flexbox {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		padding-bottom: 10px;
+	}
+
+	&__background {
+		background: #2b7df7;
+		display: flex;
+		align-items: center;
+	}
+	&__links {
+		color: #fff;
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+
+		&__blocks {
+			gap: 0px;
+			display: flex;
+			justify-content: space-between;
+			flex-direction: column;
+		}
+
+		@media (min-width: 870px) {
+			&__blocks {
+				flex-direction: row;
+				gap: 50px;
+			}
+		}
+
+		&__list {
+			display: flex;
+			flex-direction: column;
+
+			li {
+				margin-bottom: 10px;
+			}
+		}
+	}
+}
