@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/tezos_ua/static/css/main.8a7e1757.chunk.css",
+    "main.js": "/tezos_ua/static/js/main.cce9becb.chunk.js",
+    "main.js.map": "/tezos_ua/static/js/main.cce9becb.chunk.js.map",
+    "runtime-main.js": "/tezos_ua/static/js/runtime-main.16cad634.js",
+    "runtime-main.js.map": "/tezos_ua/static/js/runtime-main.16cad634.js.map",
+    "static/js/2.e4a1c8bf.chunk.js": "/tezos_ua/static/js/2.e4a1c8bf.chunk.js",
+    "static/js/2.e4a1c8bf.chunk.js.map": "/tezos_ua/static/js/2.e4a1c8bf.chunk.js.map",
+    "index.html": "/tezos_ua/index.html",
+    "static/css/main.8a7e1757.chunk.css.map": "/tezos_ua/static/css/main.8a7e1757.chunk.css.map",
+    "static/js/2.e4a1c8bf.chunk.js.LICENSE.txt": "/tezos_ua/static/js/2.e4a1c8bf.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.16cad634.js",
+    "static/js/2.e4a1c8bf.chunk.js",
+    "static/css/main.8a7e1757.chunk.css",
+    "static/js/main.cce9becb.chunk.js"
+  ]
+}
