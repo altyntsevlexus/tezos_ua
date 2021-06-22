@@ -1,20 +1,24 @@
 {
   "files": {
     "main.css": "/tezos_ua/static/css/main.8a7e1757.chunk.css",
-    "main.js": "/tezos_ua/static/js/main.cce9becb.chunk.js",
-    "main.js.map": "/tezos_ua/static/js/main.cce9becb.chunk.js.map",
+    "main.js": "/tezos_ua/static/js/main.e52a1d5c.chunk.js",
+    "main.js.map": "/tezos_ua/static/js/main.e52a1d5c.chunk.js.map",
     "runtime-main.js": "/tezos_ua/static/js/runtime-main.16cad634.js",
     "runtime-main.js.map": "/tezos_ua/static/js/runtime-main.16cad634.js.map",
     "static/js/2.e4a1c8bf.chunk.js": "/tezos_ua/static/js/2.e4a1c8bf.chunk.js",
     "static/js/2.e4a1c8bf.chunk.js.map": "/tezos_ua/static/js/2.e4a1c8bf.chunk.js.map",
     "index.html": "/tezos_ua/index.html",
     "static/css/main.8a7e1757.chunk.css.map": "/tezos_ua/static/css/main.8a7e1757.chunk.css.map",
-    "static/js/2.e4a1c8bf.chunk.js.LICENSE.txt": "/tezos_ua/static/js/2.e4a1c8bf.chunk.js.LICENSE.txt"
+    "static/js/2.e4a1c8bf.chunk.js.LICENSE.txt": "/tezos_ua/static/js/2.e4a1c8bf.chunk.js.LICENSE.txt",
+    "static/media/screen.e03517e7.png": "/tezos_ua/static/media/screen.e03517e7.png",
+    "static/media/skills.27abf736.png": "/tezos_ua/static/media/skills.27abf736.png",
+    "static/media/team1.1421d4dc.png": "/tezos_ua/static/media/team1.1421d4dc.png",
+    "static/media/team2.579350a5.png": "/tezos_ua/static/media/team2.579350a5.png"
   },
   "entrypoints": [
     "static/js/runtime-main.16cad634.js",
     "static/js/2.e4a1c8bf.chunk.js",
     "static/css/main.8a7e1757.chunk.css",
-    "static/js/main.cce9becb.chunk.js"
+    "static/js/main.e52a1d5c.chunk.js"
   ]
 }
