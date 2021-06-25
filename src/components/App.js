@@ -1,5 +1,5 @@
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Route,
   Switch,
   Redirect
@@ -19,7 +19,7 @@ function App() {
   return (
     <Router >
       <Nav/>
-      <Switch>0
+      <Switch>
       <Route path="/home" component={Home}/>
       <Route path="/login" component={Login}/>
       <Redirect from="/" to="/home"/>

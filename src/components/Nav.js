@@ -23,7 +23,7 @@ const Nav = () => {
                     <div className="nav__flexbox">
                         <Link to='./home'>
                             <div className="logo-box">
-                            <img alt="Tezos" src="/images/vector.png" className="logo-box__logo"/>
+                            <img alt="Tezos" src="/tezos_ua/images/vector.png" className="logo-box__logo"/>
                             <p>Tezos4all</p>
                             </div>
                         </Link>
@@ -36,7 +36,7 @@ const Nav = () => {
                             <Link to='./login'><Button className="button_home" name="Login"/></Link>
                         </div>
                         : ''}
-                        <Button className="button_home" onClick={handleDropped}><img src='/images/gamb.png' alt="gamb"></img></Button>
+                        <Button className="button_home" onClick={handleDropped}><img src='/tezos_ua/images/gamb.png' alt="gamb"></img></Button>
                         </>
                         : 
                         <div className="nav__box">

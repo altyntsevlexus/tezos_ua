@@ -22,7 +22,7 @@ const Description = () => {
                     </li>
                     </ul>
                 </div>
-                <img src='/images/description.png' alt="description" className="description__img"/>
+                <img src='/tezos_ua/images/description.png' alt="description" className="description__img"/>
                 </div>
             </div>
         </section>
