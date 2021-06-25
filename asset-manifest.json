@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/tezos_ua/static/css/main.8a7e1757.chunk.css",
-    "main.js": "/tezos_ua/static/js/main.7ce3f397.chunk.js",
-    "main.js.map": "/tezos_ua/static/js/main.7ce3f397.chunk.js.map",
+    "main.js": "/tezos_ua/static/js/main.f405c4fd.chunk.js",
+    "main.js.map": "/tezos_ua/static/js/main.f405c4fd.chunk.js.map",
     "runtime-main.js": "/tezos_ua/static/js/runtime-main.16cad634.js",
     "runtime-main.js.map": "/tezos_ua/static/js/runtime-main.16cad634.js.map",
     "static/js/2.ba7533e0.chunk.js": "/tezos_ua/static/js/2.ba7533e0.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.16cad634.js",
     "static/js/2.ba7533e0.chunk.js",
     "static/css/main.8a7e1757.chunk.css",
-    "static/js/main.7ce3f397.chunk.js"
+    "static/js/main.f405c4fd.chunk.js"
   ]
 }
