@@ -10,7 +10,7 @@ const Input = ({
 }) => {
   return (
     <>
-      <label htmlFor={name} className="login-form__label">
+      <label htmlFor={name} className="login__label">
         {labelName}
       </label>
       <input
@@ -19,7 +19,7 @@ const Input = ({
         name={name}
         required
         className={
-          errorTracker ? 'login-form__input' : 'login-form__input_error'
+          errorTracker ? 'login__input' : 'login__input login__input_error'
         }
         onChange={handleChange}
       />

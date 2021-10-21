@@ -1,12 +1,16 @@
-.login-form {
+.login {
+  @extend %flex-column-between;
   height: 480px;
   width: 80vw;
-  @extend %flex-column-between;
   align-items: center;
   background: #ecf4ff;
   box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   padding: 40px;
+
+  @include media(tablet) {
+    width: 605px;
+  }
 
   &__title {
     font-weight: bold;
@@ -23,12 +27,16 @@
     box-shadow: none;
     margin-bottom: 10px;
     border-color: green;
+
+    @include media(tablet) {
+      width: 390px;
+    }
+
     &:focus {
       outline: none;
     }
 
-    &_error {
-      @extend .login-form__input;
+    &--status--error {
       border-color: red;
     }
   }
@@ -59,24 +67,26 @@
     width: 50vw;
     font-size: 12px;
 
-    &_gray {
+    @include media(tablet) {
+      width: 390px;
+    }
+
+    &--c--gray {
       color: gray;
     }
 
-    &_red {
+    &--c--red {
       color: red;
     }
   }
 }
 
 @include media(tablet) {
-  .login-form {
-    width: 605px;
-    &__input {
-      width: 390px;
-    }
-    &__notification {
-      width: 390px;
-    }
+  width: 605px;
+  &__input {
+    width: 390px;
+  }
+  &__notification {
+    width: 390px;
   }
 }

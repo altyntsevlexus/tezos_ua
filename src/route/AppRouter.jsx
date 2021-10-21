@@ -2,8 +2,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Home from '../pages/home';
 import Login from '../pages/login';
-import Nav from '../components/Nav';
-import Footer from '../components/Footer';
+import Nav from '../components/Nav/Nav';
+import Footer from '../components/Footer/Footer';
 
 const ROUTE_CONFIG = [
   { path: '/tezos_ua', component: Home },

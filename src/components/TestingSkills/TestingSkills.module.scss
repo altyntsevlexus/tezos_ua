@@ -1,3 +1,7 @@
+@import '../../styles/base/variables';
+@import '../../styles/base/mixins';
+@import '../../styles/base/placeholders';
+
 .skills {
   display: grid;
   grid-template-rows: repeat(8, 80px);

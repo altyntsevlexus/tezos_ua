@@ -1,3 +1,7 @@
+@import '../../styles/base/variables';
+@import '../../styles/base/mixins';
+@import '../../styles/base/placeholders';
+
 .nav {
   display: flex;
   align-items: center;
@@ -18,29 +22,5 @@
     display: flex;
     flex-direction: column;
     gap: 5px;
-  }
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-
-  &:hover > .logo__text {
-    color: $yellow;
-  }
-
-  &:hover > .logo__icon {
-    fill: $yellow;
-  }
-
-  &__icon {
-    fill: $white;
-  }
-
-  &__text {
-    font-weight: bold;
-    @extend %fs-18;
-    color: white;
   }
 }

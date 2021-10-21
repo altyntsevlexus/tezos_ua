@@ -1,16 +1,16 @@
-import React from 'react';
+import Nav from '../Nav/Nav';
 
-import Nav from './Nav';
+import styled from './Footer.module.scss';
 
 const Footer = () => {
   return (
     <footer>
       <Nav />
-      <div className="footer">
+      <div className={styled.footer}>
         <div className="wrapper">
-          <div className="footer__flexbox">
-            <div className="footer__links">
-              <ul className="footer__list">
+          <div className={styled.footer__flexbox}>
+            <div className={styled.footer__links}>
+              <ul className={styled.footer__list}>
                 <li>
                   <a href="#skills" className="link">
                     Testing skills

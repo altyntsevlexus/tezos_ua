@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { validateEmail, validatePassword } from '../services/validation';
+import { validateEmail, validatePassword } from '../../services/validation';
 
-import Input from './shared/Input';
+import Input from '../shared/Input';
 
 const LoginForm = () => {
   const [credentials, setCredentials] = useState({
@@ -43,10 +43,10 @@ const LoginForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="login-form">
-      <p className="login-form__title">Login</p>
+    <form onSubmit={handleSubmit} className="login">
+      <p className="login__title">Login</p>
 
-      <div className="login-form__group">
+      <div className="login__group">
         <Input
           labelName="Email"
           name="email"
@@ -59,13 +59,13 @@ const LoginForm = () => {
         {errors.email ? (
           ''
         ) : (
-          <p className="login-form__notification login-form__notification_red">
+          <p className="login__notification login__notification--c--red">
             Email is Invalid
           </p>
         )}
       </div>
 
-      <div className="login-form__group">
+      <div className="login__group">
         <Input
           labelName="Password"
           name="password"
@@ -76,19 +76,19 @@ const LoginForm = () => {
         />
 
         {errors.password ? (
-          <p className="login-form__notification login-form__notification_gray">
+          <p className="login__notification login__notification--c--gray">
             Password must contain only latin letters, 1 upper-case character, 1
             lower-case character, one number and one special character
           </p>
         ) : (
-          <p className="login-form__notification login-form__notification_red">
+          <p className="login__notification login__notification--c--red">
             Password must contain only latin letters, 1 upper-case character, 1
             lower-case character, one number and one special character
           </p>
         )}
       </div>
 
-      <div className="login-form__group">
+      <div className="login__group">
         <Input
           labelName="Confirm password"
           name="password2"
@@ -101,7 +101,7 @@ const LoginForm = () => {
         {errors.password2 ? (
           ''
         ) : (
-          <p className="login-form__notification login-form__notification_red">
+          <p className="login__notification login__notification--c--red">
             Passwords don`&#39;`t match
           </p>
         )}

@@ -2,10 +2,12 @@ import { useLocation } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 import { useState } from 'react';
 
-import Button from './shared/Button';
-import Logo from './shared/Logo';
+import Button from '../shared/Button';
+import Logo from '../Logo/Logo';
 
-import gamb from '../images/gamb.svg';
+import gamb from '../../images/gamb.svg';
+
+import styled from './Nav.module.scss';
 
 const Nav = () => {
   const [dropped, setDropped] = useState(false);
@@ -18,9 +20,9 @@ const Nav = () => {
   const isMobile = useMediaQuery({ query: `(max-width: 870px)` });
 
   return (
-    <div className="nav">
+    <div className={styled.nav}>
       <div className="wrapper">
-        <div className="nav__flexbox">
+        <div className={styled.nav__flexbox}>
           <Logo />
           {isMobile ? (
             <>
@@ -31,7 +33,7 @@ const Nav = () => {
                 <img src={gamb} alt="gamb" />
               </Button>
               {dropped && (
-                <div className="nav__dropdown">
+                <div className={styled.nav__dropdown}>
                   <Button linkTo="/tezos_ua" className="button--type--filled">
                     Home
                   </Button>

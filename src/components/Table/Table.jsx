@@ -1,12 +1,14 @@
 import React, { useContext } from 'react';
-import { BlocksStateContext } from '../state/blocksContext';
-import TrBlock from './shared/TrBlock';
+import { BlocksStateContext } from '../../state/blocksContext';
+import TrBlock from '../shared/TrBlock';
+
+import styled from './Table.module.scss';
 
 const Table = () => {
   const { blocks } = useContext(BlocksStateContext);
 
   return (
-    <table>
+    <table className={styled.table}>
       <thead>
         <tr>
           <th>Block ID</th>

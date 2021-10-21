@@ -1,3 +1,7 @@
+@import '../../styles/base/variables';
+@import '../../styles/base/mixins';
+@import '../../styles/base/placeholders';
+
 .team {
   @extend %flex-column-between;
   align-items: center;
