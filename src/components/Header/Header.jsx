@@ -1,5 +1,5 @@
 import Table from '../Table/Table';
-import WithHeader from '../shared/WithHeader';
+import WithHeader from './WithHeader';
 import logo from '../../images/logo-big.svg';
 
 import styled from './Header.module.scss';

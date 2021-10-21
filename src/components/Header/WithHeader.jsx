@@ -1,6 +1,6 @@
 import propTypes from 'prop-types';
 
-import styled from '../Header/Header.module.scss';
+import styled from './Header.module.scss';
 
 const WithHeader = ({ children }) => {
   return (
