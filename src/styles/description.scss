@@ -1,67 +1,69 @@
 .description {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
+  @extend %flex-column-between;
 
-	&__flexbox {
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		align-items: center;
-	}
+  @include media(desktop) {
+    flex-direction: row;
+  }
 
-	@media (min-width: 1281px) {
-		&__flexbox {
-			display: flex;
-			flex-direction: row;
-			justify-content: space-between;
-		}
-	}
+  &__information {
+    @extend %flex-column-between;
+    align-items: center;
+    margin-bottom: 35px;
 
-	&__list {
-		&__item {
-			display: flex;
-			justify-content: space-around;
-			align-items: center;
-			border-bottom: 1px solid #d5e4f1;
-			padding: 20px 0;
+    @include media(desktop) {
+      align-items: flex-start;
+      margin-bottom: 0;
+    }
+  }
 
-			span {
-				font-weight: 600;
-				font-size: 28px;
-				letter-spacing: 0.015em;
-				color: #ffbf2b;
-			}
+  &__title {
+    max-width: 380px;
+  }
 
-			p {
-				width: 70%;
-				font-size: 16px;
-			}
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
 
-			@media (min-width: 870px) {
-				p {
-					width: 370px;
-				}
-			}
-		}
-	}
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border-bottom: 1px solid #d5e4f1;
+    padding-bottom: 16px;
+  }
 
-	&__img {
-		width: 100vw;
-		height: 230px;
-		object-fit: cover;
-	}
+  &__number {
+    font-weight: 600;
+    font-size: 28px;
+    letter-spacing: 0.015em;
+    color: $yellow;
+  }
 
-	@media (min-width: 1281px) {
-		&__img {
-			width: auto;
-			height: 100%;
-		}
-	}
-}
+  &__text {
+    max-width: 415px;
+    margin-right: 25px;
+    line-height: 17.5px;
 
-@media (min-width: 870px) {
-	.description {
-		height: 410px;
-	}
+    @include media(desktop) {
+      max-width: 370px;
+    }
+  }
+
+  &__img {
+    width: 100vw;
+    height: 184px;
+    object-fit: cover;
+    align-self: center;
+
+    @include media(tablet-desktop) {
+      height: 288px;
+    }
+
+    @include media(desktop) {
+      width: auto;
+      height: 100%;
+    }
+  }
 }

@@ -1,0 +1,60 @@
+* {
+  font-family: 'Open Sans', sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: $white-background;
+}
+
+.wrapper {
+  max-width: 1240px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 30px;
+
+  @include media(desktop) {
+    padding: 0px;
+  }
+}
+
+section,
+header {
+  margin-bottom: 60px;
+
+  @include media(tablet) {
+    margin-bottom: 100px;
+  }
+}
+
+.title {
+  @extend %fs-36;
+  margin-bottom: 50px;
+  text-align: center;
+
+  &--center {
+    &--tablet {
+      @include media(desktop) {
+        text-align: start;
+      }
+    }
+
+    &--mobile {
+      @include media(tablet) {
+        text-align: start;
+      }
+    }
+  }
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.link:hover {
+  color: $yellow;
+}

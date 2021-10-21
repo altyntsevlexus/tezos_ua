@@ -1,25 +1,25 @@
 table {
-	display: block;
-	border-collapse: collapse;
-	background-color: #fff;
-	text-align: center;
-	height: 340px;
-	max-width: 100%;
-	overflow-y: scroll;
+  display: block;
+  border-collapse: collapse;
+  background: $white;
+  text-align: center;
+  height: 340px;
+  max-width: 100%;
+  overflow-y: scroll;
 }
 
-@media (min-width: 870px) {
-	table {
-		max-width: 900px;
-	}
+@include media(tablet) {
+  table {
+    max-width: 900px;
+  }
 }
 
 tr {
-	border: 1px solid black;
+  border: 1px solid black;
 }
 
 td {
-	padding: 0 15px;
-	max-width: 110px;
-	word-wrap: break-word;
+  padding: 0 15px;
+  max-width: 110px;
+  word-wrap: break-word;
 }

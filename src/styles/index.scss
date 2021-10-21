@@ -1,11 +1,16 @@
-@import './shared/global-styles.scss';
-@import './shared/buttons.scss';
+@import './base/normalize';
+@import './base/variables';
+@import './base/mixins';
+@import './base/placeholders';
+@import './base/common';
 
-@import './nav.scss';
-@import './header.scss';
-@import './table.scss';
-@import './login-form.scss';
-@import './testing-skills.scss';
-@import './description.scss';
-@import './team.scss';
-@import "./footer.scss";
+@import './shared/buttons';
+
+@import './nav';
+@import './header';
+@import './table';
+@import './login-form';
+@import './testing-skills';
+@import './description';
+@import './team';
+@import './footer';

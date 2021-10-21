@@ -1,0 +1,15 @@
+@mixin media($point) {
+  @if $point == desktop {
+    @media (min-width: $desktop) {
+      @content;
+    }
+  } @else if $point == tablet-desktop {
+    @media (min-width: $tablet) and (max-width: $desktop) {
+      @content;
+    }
+  } @else if $point == tablet {
+    @media (min-width: $tablet) {
+      @content;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+%fs-18 {
+  font-size: 18px;
+}
+
+%fs-32 {
+  font: {
+    size: 32px;
+    weight: 600;
+  }
+}
+
+%fs-36 {
+  font: {
+    size: 36px;
+    weight: 300;
+  }
+}
+%fs-54 {
+  font: {
+    size: 54px;
+    weight: 700;
+  }
+}
+
+%flex-column-between {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
