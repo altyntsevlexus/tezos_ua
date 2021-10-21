@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
-import { validateEmail, validatePassword } from '../../services/validation';
+import {
+  validateEmail,
+  validatePassword,
+  validatePassword2,
+} from '../../services/validation';
 
-import Input from '../shared/Input';
+import Input from '../Input/Input';
+
+import styled from './LoginForm.module.scss';
 
 const LoginForm = () => {
   const [credentials, setCredentials] = useState({
@@ -10,10 +16,10 @@ const LoginForm = () => {
     password2: '',
   });
 
-  const [errors, setErrors] = useState({
-    email: true,
-    password: true,
-    password2: true,
+  const [validation, setValidation] = useState({
+    email: null,
+    password: null,
+    password2: null,
   });
 
   const handleChange = (e) => {
@@ -26,82 +32,104 @@ const LoginForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    setErrors({
-      email: validateEmail(credentials.email),
-      password: validatePassword(credentials.password),
-      password2: credentials.password === credentials.password2,
-    });
-
-    if (
-      validateEmail(credentials.email) &&
-      validatePassword(credentials.password) &&
-      credentials.password === credentials.password2
-    ) {
+    if (validation.email && validation.password && validation.password2) {
       // eslint-disable-next-line no-alert
       alert('Welcome to Tezos!');
     }
   };
 
-  return (
-    <form onSubmit={handleSubmit} className="login">
-      <p className="login__title">Login</p>
+  const { email, password, password2 } = credentials;
 
-      <div className="login__group">
+  const handleValidateEmail = () => {
+    setValidation({
+      ...validation,
+      email: validateEmail(email),
+    });
+  };
+
+  const handleValidatePassword = () => {
+    return password2
+      ? setValidation({
+          ...validation,
+          password: validatePassword(password),
+          password2: validatePassword2(password, password2),
+        })
+      : setValidation({
+          ...validation,
+          password: validatePassword(password),
+        });
+  };
+
+  const handleValidatePassword2 = () => {
+    setValidation({
+      ...validation,
+      password2: validatePassword2(password, password2),
+    });
+  };
+
+  return (
+    <form onSubmit={handleSubmit} className={styled.login}>
+      <p className={styled.login__title}>Login</p>
+
+      <div className={styled.login__group}>
         <Input
-          labelName="Email"
+          labelText="Email"
           name="email"
           value={credentials.email}
           handleChange={handleChange}
-          errorTracker={errors.email}
+          handleValidate={handleValidateEmail}
+          validation={validation.email}
           type="text"
         />
 
-        {errors.email ? (
+        {validation.email || validation.email === null ? (
           ''
         ) : (
-          <p className="login__notification login__notification--c--red">
-            Email is Invalid
-          </p>
+          <p className={styled.login__notification}>Email is Invalid</p>
         )}
       </div>
 
-      <div className="login__group">
+      <div className={styled.login__group}>
         <Input
-          labelName="Password"
+          labelText="Password"
           name="password"
-          value={credentials.password}
+          value={password}
           handleChange={handleChange}
-          errorTracker={errors.password}
+          handleValidate={handleValidatePassword}
+          validation={validation.password}
           type="password"
         />
 
-        {errors.password ? (
-          <p className="login__notification login__notification--c--gray">
+        {validation.password || validation.password === null ? (
+          <p
+            className={`${styled.login__notification} ${styled['login__notification--c--gray']}`}
+          >
             Password must contain only latin letters, 1 upper-case character, 1
             lower-case character, one number and one special character
           </p>
         ) : (
-          <p className="login__notification login__notification--c--red">
+          <p className={styled.login__notification}>
             Password must contain only latin letters, 1 upper-case character, 1
             lower-case character, one number and one special character
           </p>
         )}
       </div>
 
-      <div className="login__group">
+      <div className={styled.login__group}>
         <Input
-          labelName="Confirm password"
+          labelText="Confirm password"
           name="password2"
-          value={credentials.password2}
+          value={password2}
           handleChange={handleChange}
-          errorTracker={errors.password2}
+          handleValidate={handleValidatePassword2}
+          validation={validation.password2}
           type="password"
         />
 
-        {errors.password2 ? (
+        {validation.password2 || validation.password2 === null ? (
           ''
         ) : (
-          <p className="login__notification login__notification--c--red">
+          <p className={styled.login__notification}>
             Passwords don`&#39;`t match
           </p>
         )}
