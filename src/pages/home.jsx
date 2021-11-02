@@ -1,14 +1,13 @@
-import React, { useEffect, useContext } from 'react';
+import React, { useEffect } from 'react';
 
-import TestingSkills from '../components/TestingSkills/TestingSkills';
-import Description from '../components/Description/Description';
-import Team from '../components/Team/Team';
-import Header from '../components/Header/Header';
-import { BlocksStateContext } from '../state/blocksContext';
+import TestingSkills from '../components/TestingSkills';
+import Description from '../components/Description';
+import Team from '../components/Team';
+import Header from '../components/Header';
+import { useBlocksState } from '../context/blocksContext';
 
 const Home = () => {
-  const { handleBlocks } = useContext(BlocksStateContext);
-
+  const { handleBlocks } = useBlocksState();
   useEffect(() => {
     handleBlocks();
   }, []);

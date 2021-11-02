@@ -1,4 +1,4 @@
-import Nav from '../Nav/Nav';
+import Nav from '../Nav';
 
 import styled from './Footer.module.scss';
 

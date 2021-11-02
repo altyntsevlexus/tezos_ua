@@ -1,32 +1,35 @@
-import React, { useContext } from 'react';
-import { BlocksStateContext } from '../../state/blocksContext';
-import TrBlock from '../shared/TrBlock';
+import propTypes from 'prop-types';
 
 import styled from './Table.module.scss';
 
-const Table = () => {
-  const { blocks } = useContext(BlocksStateContext);
-
+const Table = ({ cols, rows }) => {
   return (
     <table className={styled.table}>
       <thead>
         <tr>
-          <th>Block ID</th>
-          <th>Baker</th>
-          <th>Created</th>
-          <th># of operations</th>
-          <th>Volume</th>
-          <th>Fees</th>
-          <th>Endorsements</th>
+          {cols.map((col) => {
+            return <th key={col.key}>{col.name}</th>;
+          })}
         </tr>
       </thead>
       <tbody>
-        {blocks.map((block) => {
-          return <TrBlock key={Number(block.level)} block={block} />;
+        {rows.map((row) => {
+          return (
+            <tr key={row.level}>
+              {cols.map((col) => (
+                <td key={row[col.key]}>{row[col.key]}</td>
+              ))}
+            </tr>
+          );
         })}
       </tbody>
     </table>
   );
+};
+
+Table.propTypes = {
+  cols: propTypes.arrayOf({}).isRequired,
+  rows: propTypes.arrayOf({}).isRequired,
 };
 
 export default Table;

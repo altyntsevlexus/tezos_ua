@@ -1,69 +1,98 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import {
   validateEmail,
   validatePassword,
   validatePassword2,
 } from '../../services/validation';
 
-import Input from '../Input/Input';
+import Input from '../Input';
 
 import styled from './LoginForm.module.scss';
 
 const LoginForm = () => {
   const [credentials, setCredentials] = useState({
-    email: '',
-    password: '',
-    password2: '',
-  });
-
-  const [validation, setValidation] = useState({
-    email: null,
-    password: null,
-    password2: null,
+    email: {
+      value: '',
+      isValid: null,
+    },
+    password: {
+      value: '',
+      isValid: null,
+    },
+    password2: {
+      value: '',
+      isValid: null,
+    },
   });
 
   const handleChange = (e) => {
     setCredentials({
       ...credentials,
-      [e.target.name]: e.target.value,
+      [e.target.name]: {
+        ...credentials[e.target.name],
+        value: e.target.value,
+      },
     });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (validation.email && validation.password && validation.password2) {
+    if (
+      credentials.email.isValid &&
+      credentials.password.isValid &&
+      credentials.password2.isValid
+    ) {
       // eslint-disable-next-line no-alert
       alert('Welcome to Tezos!');
     }
   };
 
-  const { email, password, password2 } = credentials;
-
   const handleValidateEmail = () => {
-    setValidation({
-      ...validation,
-      email: validateEmail(email),
+    setCredentials({
+      ...credentials,
+      email: {
+        ...credentials.email,
+        isValid: validateEmail(credentials.email.value),
+      },
     });
   };
 
   const handleValidatePassword = () => {
-    return password2
-      ? setValidation({
-          ...validation,
-          password: validatePassword(password),
-          password2: validatePassword2(password, password2),
+    return credentials.password2.value
+      ? setCredentials({
+          ...credentials,
+          password: {
+            ...credentials.password,
+            isValid: validatePassword(credentials.password.value),
+          },
+          password2: {
+            ...credentials.password2,
+            isValid: validatePassword2(
+              credentials.password.value,
+              credentials.password2.value,
+            ),
+          },
         })
-      : setValidation({
-          ...validation,
-          password: validatePassword(password),
+      : setCredentials({
+          ...credentials,
+          password: {
+            ...credentials.password,
+            isValid: validatePassword(credentials.password.value),
+          },
         });
   };
 
   const handleValidatePassword2 = () => {
-    setValidation({
-      ...validation,
-      password2: validatePassword2(password, password2),
+    setCredentials({
+      ...credentials,
+      password2: {
+        ...credentials.password2,
+        isValid: validatePassword2(
+          credentials.password.value,
+          credentials.password2.value,
+        ),
+      },
     });
   };
 
@@ -75,14 +104,14 @@ const LoginForm = () => {
         <Input
           labelText="Email"
           name="email"
-          value={credentials.email}
+          value={credentials.email.value}
           handleChange={handleChange}
           handleValidate={handleValidateEmail}
-          validation={validation.email}
+          validation={credentials.email.isValid}
           type="text"
         />
 
-        {validation.email || validation.email === null ? (
+        {credentials.email.isValid || credentials.email.isValid === null ? (
           ''
         ) : (
           <p className={styled.login__notification}>Email is Invalid</p>
@@ -93,14 +122,15 @@ const LoginForm = () => {
         <Input
           labelText="Password"
           name="password"
-          value={password}
+          value={credentials.password.value}
           handleChange={handleChange}
           handleValidate={handleValidatePassword}
-          validation={validation.password}
+          validation={credentials.password.isValid}
           type="password"
         />
 
-        {validation.password || validation.password === null ? (
+        {credentials.password.isValid ||
+        credentials.password.isValid === null ? (
           <p
             className={`${styled.login__notification} ${styled['login__notification--c--gray']}`}
           >
@@ -119,14 +149,15 @@ const LoginForm = () => {
         <Input
           labelText="Confirm password"
           name="password2"
-          value={password2}
+          value={credentials.password2.value}
           handleChange={handleChange}
           handleValidate={handleValidatePassword2}
-          validation={validation.password2}
+          validation={credentials.password2.isValid}
           type="password"
         />
 
-        {validation.password2 || validation.password2 === null ? (
+        {credentials.password2.isValid ||
+        credentials.password2.isValid === null ? (
           ''
         ) : (
           <p className={styled.login__notification}>

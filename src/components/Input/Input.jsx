@@ -7,7 +7,7 @@ const inputStatus = (validation) => {
     case true:
       return `${styled.input} ${styled['input--status--resolved']}`;
     case false:
-      return `${styled.input} + ${styled['input--status--error']}`;
+      return `${styled.input} ${styled['input--status--error']}`;
     default:
       return styled.input;
   }

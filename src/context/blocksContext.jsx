@@ -4,6 +4,7 @@ import { getBlocks } from '../api';
 import { NetworkStateContext } from './networkContext';
 
 const BlocksStateContext = createContext([]);
+const useBlocksState = () => useContext(BlocksStateContext);
 
 const transformDate = (date) => {
   const year = date.getFullYear();
@@ -35,16 +36,20 @@ const transformBlocksData = (blocks) => {
 
 const BlocksProvider = ({ children }) => {
   const [blocks, setBlocks] = useState([]);
+  const [total, setTotal] = useState('');
 
   const network = useContext(NetworkStateContext);
 
-  const handleBlocks = () => {
-    getBlocks(network)
-      .then((response) => transformBlocksData(response.data))
+  const handleBlocks = (offset, limit) => {
+    getBlocks(network, offset, limit)
+      .then((response) => {
+        setTotal(response.headers['x-total-count']);
+        return transformBlocksData(response.data);
+      })
       .then((res) => setBlocks(res));
   };
 
-  const data = { blocks, handleBlocks };
+  const data = { blocks, total, handleBlocks };
 
   return (
     <BlocksStateContext.Provider value={data}>
@@ -57,4 +62,4 @@ BlocksProvider.propTypes = {
   children: propTypes.node.isRequired,
 };
 
-export { BlocksStateContext, BlocksProvider };
+export { useBlocksState, BlocksProvider };

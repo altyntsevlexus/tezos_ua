@@ -2,8 +2,8 @@ import { useLocation } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 import { useState } from 'react';
 
-import Button from '../shared/Button';
-import Logo from '../Logo/Logo';
+import Button from '../Button';
+import Logo from '../Logo';
 
 import gamb from '../../images/gamb.svg';
 

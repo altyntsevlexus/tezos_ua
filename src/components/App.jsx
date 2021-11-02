@@ -1,6 +1,6 @@
-import AppRouter from '../route/AppRouter';
-import { BlocksProvider } from '../state/blocksContext';
-import { NetworkProvider } from '../state/networkContext';
+import AppRouter from '../router/AppRouter';
+import { BlocksProvider } from '../context/blocksContext';
+import { NetworkProvider } from '../context/networkContext';
 
 function App() {
   return (
