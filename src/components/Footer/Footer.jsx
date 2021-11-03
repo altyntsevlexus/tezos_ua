@@ -27,7 +27,7 @@ const Footer = () => {
                   </a>
                 </li>
               </ul>
-              <ul className="footer__list">
+              <ul className={styled.footer__list}>
                 <li>
                   <a href="#top" className="link">
                     About us

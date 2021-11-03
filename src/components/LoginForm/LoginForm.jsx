@@ -1,9 +1,5 @@
 import { useState } from 'react';
-import {
-  validateEmail,
-  validatePassword,
-  validatePassword2,
-} from '../../services/validation';
+import { validate, validatePassword2 } from '../../services/validation';
 
 import Input from '../Input';
 
@@ -53,7 +49,7 @@ const LoginForm = () => {
       ...credentials,
       email: {
         ...credentials.email,
-        isValid: validateEmail(credentials.email.value),
+        isValid: validate('email', credentials.email.value),
       },
     });
   };
@@ -64,7 +60,7 @@ const LoginForm = () => {
           ...credentials,
           password: {
             ...credentials.password,
-            isValid: validatePassword(credentials.password.value),
+            isValid: validate('password', credentials.password.value),
           },
           password2: {
             ...credentials.password2,
@@ -78,7 +74,7 @@ const LoginForm = () => {
           ...credentials,
           password: {
             ...credentials.password,
-            isValid: validatePassword(credentials.password.value),
+            isValid: validate('password', credentials.password.value),
           },
         });
   };
@@ -129,20 +125,17 @@ const LoginForm = () => {
           type="password"
         />
 
-        {credentials.password.isValid ||
-        credentials.password.isValid === null ? (
-          <p
-            className={`${styled.login__notification} ${styled['login__notification--c--gray']}`}
-          >
-            Password must contain only latin letters, 1 upper-case character, 1
-            lower-case character, one number and one special character
-          </p>
-        ) : (
-          <p className={styled.login__notification}>
-            Password must contain only latin letters, 1 upper-case character, 1
-            lower-case character, one number and one special character
-          </p>
-        )}
+        <p
+          className={
+            credentials.password.isValid ||
+            credentials.password.isValid === null
+              ? `${styled.login__notification} ${styled['login__notification--c--gray']}`
+              : styled.login__notification
+          }
+        >
+          Password must contain only latin letters, 1 upper-case character, 1
+          lower-case character, one number and one special character
+        </p>
       </div>
 
       <div className={styled.login__group}>
@@ -161,7 +154,7 @@ const LoginForm = () => {
           ''
         ) : (
           <p className={styled.login__notification}>
-            Passwords don`&#39;`t match
+            Passwords don&#39;t match
           </p>
         )}
       </div>
