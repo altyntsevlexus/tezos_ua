@@ -28,7 +28,7 @@
 
   &:focus ~ .input__label,
   &:not([value='']) ~ .input__label {
-    top: -14px;
+    top: -15px;
     left: 15px;
     padding: 5px 10px;
     z-index: 1;
