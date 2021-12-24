@@ -1,20 +1,29 @@
 {
   "files": {
-    "main.css": "/tezos_ua/static/css/main.8a7e1757.chunk.css",
-    "main.js": "/tezos_ua/static/js/main.f405c4fd.chunk.js",
-    "main.js.map": "/tezos_ua/static/js/main.f405c4fd.chunk.js.map",
+    "main.css": "/tezos_ua/static/css/main.939e27a3.chunk.css",
+    "main.js": "/tezos_ua/static/js/main.2843cdba.chunk.js",
+    "main.js.map": "/tezos_ua/static/js/main.2843cdba.chunk.js.map",
     "runtime-main.js": "/tezos_ua/static/js/runtime-main.16cad634.js",
     "runtime-main.js.map": "/tezos_ua/static/js/runtime-main.16cad634.js.map",
-    "static/js/2.ba7533e0.chunk.js": "/tezos_ua/static/js/2.ba7533e0.chunk.js",
-    "static/js/2.ba7533e0.chunk.js.map": "/tezos_ua/static/js/2.ba7533e0.chunk.js.map",
+    "static/js/2.4f61dcb1.chunk.js": "/tezos_ua/static/js/2.4f61dcb1.chunk.js",
+    "static/js/2.4f61dcb1.chunk.js.map": "/tezos_ua/static/js/2.4f61dcb1.chunk.js.map",
     "index.html": "/tezos_ua/index.html",
-    "static/css/main.8a7e1757.chunk.css.map": "/tezos_ua/static/css/main.8a7e1757.chunk.css.map",
-    "static/js/2.ba7533e0.chunk.js.LICENSE.txt": "/tezos_ua/static/js/2.ba7533e0.chunk.js.LICENSE.txt"
+    "static/css/main.939e27a3.chunk.css.map": "/tezos_ua/static/css/main.939e27a3.chunk.css.map",
+    "static/js/2.4f61dcb1.chunk.js.LICENSE.txt": "/tezos_ua/static/js/2.4f61dcb1.chunk.js.LICENSE.txt",
+    "static/media/description.99175ac1.png": "/tezos_ua/static/media/description.99175ac1.png",
+    "static/media/done.862a5064.svg": "/tezos_ua/static/media/done.862a5064.svg",
+    "static/media/gamb.7b1f9e74.svg": "/tezos_ua/static/media/gamb.7b1f9e74.svg",
+    "static/media/logo-big.08557f04.svg": "/tezos_ua/static/media/logo-big.08557f04.svg",
+    "static/media/logo.a4307448.svg": "/tezos_ua/static/media/logo.a4307448.svg",
+    "static/media/Header.module.scss": "/tezos_ua/static/media/screen.e03517e7.png",
+    "static/media/skills.27abf736.png": "/tezos_ua/static/media/skills.27abf736.png",
+    "static/media/team-1.870694e9.png": "/tezos_ua/static/media/team-1.870694e9.png",
+    "static/media/team-2.4be93d62.png": "/tezos_ua/static/media/team-2.4be93d62.png"
   },
   "entrypoints": [
     "static/js/runtime-main.16cad634.js",
-    "static/js/2.ba7533e0.chunk.js",
-    "static/css/main.8a7e1757.chunk.css",
-    "static/js/main.f405c4fd.chunk.js"
+    "static/js/2.4f61dcb1.chunk.js",
+    "static/css/main.939e27a3.chunk.css",
+    "static/js/main.2843cdba.chunk.js"
   ]
 }
