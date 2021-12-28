@@ -28,8 +28,8 @@ const Table = ({ cols, rows }) => {
 };
 
 Table.propTypes = {
-  cols: propTypes.arrayOf({}).isRequired,
-  rows: propTypes.arrayOf({}).isRequired,
+  cols: propTypes.arrayOf(propTypes.shape()).isRequired,
+  rows: propTypes.arrayOf(propTypes.shape()).isRequired,
 };
 
 export default Table;
